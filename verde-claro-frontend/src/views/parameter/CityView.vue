@@ -6,69 +6,89 @@
                     <p class="mb-0">Registro de Ciudades</p>
                 </div>
                 <!-- Datos de entarada del formulario -->
-                <div class="form-group">
-                    <input type="hidden" v-model="id">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                
+                                <div class="form-group">
+                                    <input type="hidden" v-model="id">
 
-                    <label class="form-label mt-1">Código</label>
-                    <input type="text" class="form-control" v-model="codigo" placeholder="Ingresar código">
+                                    <label class="form-label mt-1">Código</label>
+                                    <input type="text" class="form-control" v-model="codigo" placeholder="Ingresar código">
 
-                    <label class="form-label mt-1">Nombre</label>
-                    <input type="text" class="form-control" v-model="nombre" placeholder="Ingresar nombre">
+                                    <label class="form-label mt-1">Nombre</label>
+                                    <input type="text" class="form-control" v-model="nombre" placeholder="Ingresar nombre">
 
-                    <label class="form-label mt-1">Departamentos</label>
-                    <select class="form-select" v-model="departmentId">
-                        <option disabled :selected="true" value="">-- Seleccione --</option>
-                        <option v-for="item in listDepartment" :key="item.id" :value="item.id">{{ item.nombre}}
-                        </option>
-                    </select>
-                    <label class="form-label mt-1">Personas</label>
+                                    <label class="form-label mt-1">Departamentos</label>
+                                    <select class="form-select" v-model="departmentId">
+                                        <option disabled :selected="true" value="">-- Seleccione --</option>
+                                        <option v-for="item in listDepartment" :key="item.id" :value="item.id">{{ item.nombre}}
+                                        </option>
+                                    </select>
+                                    <label class="form-label mt-1">Personas</label>
 
 
-                    <label class="form-label mt-1">Estado</label>
-                    <select class="form-select" v-model="estado">
-                        <option disabled :selected="true" value="">-- Seleccione --</option>
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                    </select>
-                </div>
-
-                <!-- Botones -->
-                <div>
-                    <br>
-                    <button type="button" class="btn btn-outline-success" @click="dataAdd()">Agregar</button>
-                    &nbsp;
-                    <button type="button" class="btn btn-outline-warning" @click="dataUpdate()">Modificar</button>
-                </div>
-            </fieldset>
-        </form>
-
-        <!-- Registros -->
-        <div>
-            <br>
-            <table class="table table-hover">
-                <thead>
-                    <tr class="table-active">
-                        <td>Codigo</td>
-                        <td>Ciudad</td>
-                        <td>Departamento</td>
-                        <td>Estado</td>
-                        <td>Editar</td>
-                        <td>Eliminar</td>
-                    </tr>
-                </thead>
-                <tbody id="dataResult">
-                    <tr v-for="item in listData" :key="item.id">
-                        <td>{{ item.codigo }}</td>
-                        <td>{{ item.nombre }}</td>
-                        <td>{{ item.departmentId.nombre }}</td>
-                        <td>{{ item.estado == true ? 'Activo' : 'Inactivo' }}</td>
-                        <td><button @click="findByid(item.id)">➤</button></td>
-                        <td><button @click="deleteById(item.id)">➤</button></td>
-                    </tr>
-                </tbody>
-            </table>
+                                    <label class="form-label mt-1">Estado</label>
+                                    <select class="form-select" v-model="estado">
+                                        <option disabled :selected="true" value="">-- Seleccione --</option>
+                                        <option value="1">Activo</option>
+                                        <option value="0">Inactivo</option>
+                                    </select>
+                                    <!-- Botones -->
+                                    <div class="d-flex mt-3">
+                                        <button type="button" class="btn btn-outline-success" @click="dataAdd()">Agregar</button>
+                                        &nbsp;
+                                        <button type="button" class="btn btn-outline-warning" @click="dataUpdate()">Modificar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- Registros -->
+                        <div class="card">
+                                <div class="card-body">
+                                    <div class="alert p-1 text-center">
+                                        Lista de Ciudades
+                                    </div>
+                                    <div>
+                            <table class="table table-hover">
+                                <thead class="text-center">
+                                    <tr class="table-active">
+                                        <td>Codigo</td>
+                                        <td>Ciudad</td>
+                                        <td>Departamento</td>
+                                        <td>Estado</td>
+                                        <td>Editar</td>
+                                        <td>Eliminar</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="dataResult">
+                                    <tr v-for="item in listData" :key="item.id">
+                                        <td>{{ item.codigo }}</td>
+                                        <td>{{ item.nombre }}</td>
+                                        <td>{{ item.departmentId.nombre }}</td>
+                                        <td>{{ item.estado == true ? 'Activo' : 'Inactivo' }}</td>
+                                        <td class="text-center">
+                                                    <i class="fa fa-pencil-square actions text-warning me-1"
+                                                        @click="findByid(item.id)"></i>
+                                                    <i class="fa fa-trash-o actions text-danger ms-1"
+                                                        @click="findByid(item.id)"></i>
+                                                </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+             </div>
         </div>
+
     </div>
+</fieldset>
+</form>
+</div>
+
 </template>
 
 <script>
