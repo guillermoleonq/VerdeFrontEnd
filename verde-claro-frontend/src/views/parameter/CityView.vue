@@ -105,7 +105,7 @@ export default {
             })
         },
         findByid: function (id) {
-            // metodo para consutlar por el ig del boton impreso en la vista
+            // metodo para consutlar por el id del boton impreso en la vista
             axios.get('http://132.145.204.101:8180/api/cities/' + id).then(result => {
                 this.id = result.data.id;
                 this.codigo = result.data.codigo;

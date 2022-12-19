@@ -30,8 +30,10 @@
         </ul>
 
         <div class="d-flex">
-          <i class="fa fa-user icons" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-            aria-controls="offcanvasExample"></i>
+          <i class="fa fa-user icons me-2" data-bs-toggle="offcanvas" href="#offlogin" role="button"
+            aria-controls="offlogin"></i>
+          <i class="fa fa-shopping-cart ms-2 icons" data-bs-toggle="offcanvas" href="#offcarrito" role="button"
+            aria-controls="offcarrito"></i>
           <i class="fa fa-user-times icons invisible"></i>
         </div>
 
@@ -41,7 +43,7 @@
 
 
 
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offlogin" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ingresar</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -53,6 +55,31 @@
           <input class="form-control mb-2" placeholder="Contraseña" />
           <div class="d-flex">
             <button class="btn btn-success btn-sm ms-auto">Ingresar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcarrito" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carrito de compras</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="card">
+        <div class="card-body">
+
+          <table class="table text-sm" id="tblPedido">
+            <thead class="text-center">
+              <th>Producto</th>
+              <th>Cant</th>
+              <th>Total</th>
+            </thead>
+            <tbody> </tbody>
+          </table>
+          <div class="d-flex pt-3">
+            <button class="btn btn-success btn-sb ms-auto">Realizar pedido</button>
           </div>
         </div>
       </div>

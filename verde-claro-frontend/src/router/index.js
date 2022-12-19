@@ -20,11 +20,11 @@ const routes = [
     name: 'registro-departamento',
     component: () => import('../views/parameter/DepartmentView.vue')
   },
-  // {
-  //   path: '/ciudades',
-  //   name: 'registro-ciudad',
-  //   component: () => import('../views/parameter/CityView.vue')
-  // },
+  {
+    path: '/ciudades',
+    name: 'registro-ciudad',
+    component: () => import('../views/parameter/CityView.vue')
+  },
   // {
   //   path: '/seguridad-usuario',
   //   name: 'registro-usuario',
