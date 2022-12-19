@@ -20,21 +20,21 @@ const routes = [
     name: 'registro-departamento',
     component: () => import('../views/parameter/DepartmentView.vue')
   },
-  // {
-  //   path: '/ciudades',
-  //   name: 'registro-ciudad',
-  //   component: () => import('../views/parameter/CityView.vue')
-  // },
-  // {
-  //   path: '/seguridad-usuario',
-  //   name: 'registro-usuario',
-  //   component: () => import('../views/security/UserView.vue')
-  // },
-  // {
-  //   path: '/seguridad-persona',
-  //   name: 'registro-persona',
-  //   component: () => import('../views/security/PersonView.vue')
-  // },
+  {
+    path: '/ciudades',
+    name: 'registro-ciudad',
+    component: () => import('../views/parameter/CityView.vue')
+  },
+  {
+    path: '/seguridad-usuario',
+    name: 'registro-usuario',
+    component: () => import('../views/security/UserView.vue')
+  },
+  {
+    path: '/seguridad-persona',
+    name: 'registro-persona',
+    component: () => import('../views/security/PersonView.vue')
+  },
   
 
 ]
