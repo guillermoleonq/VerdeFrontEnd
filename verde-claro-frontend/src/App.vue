@@ -11,18 +11,31 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Productos</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">Administracion</a>
+              aria-expanded="false">Productos</a>
             <div class="dropdown-menu">
+              <router-link class="dropdown-item" to="/productos">Detalle productos</router-link>
+              <div class="dropdown-divider"></div>
               <router-link class="dropdown-item" to="/categorias">Categorias</router-link>
               <router-link class="dropdown-item" to="/marcas">Marcas</router-link>
               <router-link class="dropdown-item" to="/medidas">Unidad Medida</router-link>
-              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Usuarios</a>
+            <div class="dropdown-menu">
               <router-link class="dropdown-item" to="/usuarios">Usuarios</router-link>
+              <div class="dropdown-divider"></div>
+              <router-link class="dropdown-item" to="/usuarios">Permisos</router-link>
+              
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Parametros</a>
+            <div class="dropdown-menu">
               <router-link class="dropdown-item" to="/departamentos">Departamentos</router-link>
               <router-link class="dropdown-item" to="/ciudades">Ciudades</router-link>
             </div>

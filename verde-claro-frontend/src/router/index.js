@@ -24,8 +24,13 @@ const routes = [
     path: '/ciudades',
     name: 'registro-ciudad',
     component: () => import('../views/parameter/CityView.vue')
-  },
-<<<<<<< HEAD
+  }
+  ,
+  {
+    path: '/productos',
+    name: 'registro-productos',
+    component: () => import('../views/ecommerce/ProductosView.vue')
+  }
   // {
   //   path: '/seguridad-usuario',
   //   name: 'registro-usuario',
@@ -36,18 +41,6 @@ const routes = [
   //   name: 'registro-persona',
   //   component: () => import('../views/security/PersonView.vue')
   // },
-=======
-  {
-    path: '/seguridad-usuario',
-    name: 'registro-usuario',
-    component: () => import('../views/security/UserView.vue')
-  },
-  {
-    path: '/seguridad-persona',
-    name: 'registro-persona',
-    component: () => import('../views/security/PersonView.vue')
-  },
->>>>>>> 14236f9c20b8b933f7cd8795b8ac76f2fdccd3a1
   
 
 ]
