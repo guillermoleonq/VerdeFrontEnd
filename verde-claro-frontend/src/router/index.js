@@ -31,6 +31,12 @@ const routes = [
     name: 'registro-productos',
     component: () => import('../views/ecommerce/ProductosView.vue')
   }
+  ,
+  {
+    path: '/categorias',
+    name: 'registro-categorias',
+    component: () => import('../views/parameter/CategoriasView.vue')
+  }
   // {
   //   path: '/seguridad-usuario',
   //   name: 'registro-usuario',
