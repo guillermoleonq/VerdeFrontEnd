@@ -11,8 +11,8 @@
                     <div class="col-md-12 mb-2">
                         <div class="card">
 
-                            <a class="btn text-dark" data-bs-toggle="collapse"
-                                href="#bodyProducts" id="customer_header">
+                            <a class="btn text-dark" data-bs-toggle="collapse" href="#bodyProducts"
+                                id="customer_header">
                                 <i class="fa fa-arrow-circle-o-down ms-auto " id="customer_btn"></i>
                                 Nuevos productos y/o actualización
                                 <i class="fa fa-arrow-circle-o-down ms-auto " id="customer_btn"></i>
@@ -95,7 +95,7 @@
                                     Lista de Productos
                                 </div>
                                 <div>
-                                    <table class="table table-hover">
+                                    <table class="table table-responsive table-hover">
                                         <thead class="text-center">
                                             <tr class="table-active">
                                                 <td>Codigo</td>
@@ -162,7 +162,14 @@ export default {
             id: 0,
             codigo: '',
             nombre: '',
-            estado: '',
+            descripcion: '',
+            imagen: '',
+            cantidadMaxima: '',
+            cantidadMinima: '',
+            stock: '',
+            precioUnitarioCompra: '',
+            iva: '',
+            descuento: '',
             listData: [],
             listValidar: []
         }
@@ -182,7 +189,8 @@ export default {
         findByid: function (id) {
             // metodo para consutlar por el ig del boton impreso en la vista
             axios.get('http://localhost:9000/api/productos/' + id).then(result => {
-               
+
+                this.id = result.data.id,
                 this.codigo = result.data.codigo,
                 this.nombre = result.data.nombre,
                 this.descripcion = result.data.descripcion,
@@ -232,16 +240,16 @@ export default {
         },
         dataAdd: function () {
             let data = {
-                codigo : this.codigo,
-                nombre : this.nombre,
-                descripcion : this.descripcion,
-                imagen : this.imagen,
-                cantidadMaxima : this.cantidadMaxima,
-                cantidadMinima : this.cantidadMinima,
-                stock : this.stock,
-                precioUnitarioCompra : this.precioUnitarioCompra,
-                iva : this.iva,
-                descuento : this.descuento,
+                codigo: this.codigo,
+                nombre: this.nombre,
+                descripcion: this.descripcion,
+                imagen: this.imagen,
+                cantidadMaxima: this.cantidadMaxima,
+                cantidadMinima: this.cantidadMinima,
+                stock: this.stock,
+                precioUnitarioCompra: this.precioUnitarioCompra,
+                iva: this.iva,
+                descuento: this.descuento,
                 estado: parseInt(this.estado)
             };
             axios.post('http://localhost:9000/api/productos', data).then(result => {
@@ -260,18 +268,19 @@ export default {
         },
         dataUpdate: function () {
             let data = {
-                codigo : this.codigo,
-                nombre : this.nombre,
-                descripcion : this.descripcion,
-                imagen : this.imagen,
-                cantidadMaxima : this.cantidadMaxima,
-                cantidadMinima : this.cantidadMinima,
-                stock : this.stock,
-                precioUnitarioCompra : this.precioUnitarioCompra,
-                iva : this.Iva,
-                descuento : this.Descuento,
+                id: this.id,
+                codigo: this.codigo,
+                nombre: this.nombre,
+                descripcion: this.descripcion,
+                imagen: this.imagen,
+                cantidadMaxima: this.cantidadMaxima,
+                cantidadMinima: this.cantidadMinima,
+                stock: this.stock,
+                precioUnitarioCompra: this.precioUnitarioCompra,
+                iva: this.iva,
+                descuento: this.descuento,
                 estado: parseInt(this.estado)
-            };
+            }; console.log(data);
             axios.put('http://localhost:9000/api/productos/' + this.id, data).then(result => {
                 if (result.data) {
                     Swal.fire({
@@ -300,6 +309,16 @@ export default {
         },
         clearList: function () {
             this.id = 0,
+                this.codigo = '',
+                this.nombre = '',
+                this.descripcion = '',
+                this.imagen = '',
+                this.cantidadMaxima = '',
+                this.cantidadMinima = '',
+                this.stock = '',
+                this.precioUnitarioCompra = '',
+                this.iva = '',
+                this.descuento = '',
                 this.codigo = '',
                 this.nombre = '',
                 this.estado = '',
