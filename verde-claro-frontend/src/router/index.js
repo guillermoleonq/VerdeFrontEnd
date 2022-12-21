@@ -39,6 +39,11 @@ const routes = [
   }
   ,
   {
+    path: '/marcas',
+    name: 'registro-marcas',
+    component: () => import('../views/parameter/MarcasView.vue')
+  },
+  {
     path: '/medidas',
     name: 'registro-medidas',
     component: () => import('../views/parameter/UnidadMedidaView.vue')
